@@ -32,8 +32,12 @@ public class GeoObjectTester {
             //print out the current object
             System.out.println(shape);
         }
-        System.out.println("\nExprected " + gList.get(3));
-        System.out.println("Largeset: " + Measurable.getLargest(gList));
+        System.out.println("\nExprected largest area is " + gList.get(3));
+        System.out.println("Largeset is " + Measurable.getLargest(gList));
+
+        Collections.sort(gList);
+        System.out.println("\nSorted ArrayList: " + gList);
 
     }//end main
+
 }//end GeoObjectTester

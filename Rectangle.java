@@ -1,5 +1,4 @@
 //Chiild Rectangle class extends from parent GeometricObject class
-
 public class Rectangle extends Measurable {
 
     //initalize intances

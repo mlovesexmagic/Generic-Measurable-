@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @param <T>
  */
 //abstract public class Measurable<T extends Measurable> {
-abstract public class Measurable<T> {
+abstract public class Measurable<T> implements Comparable<T> {
 
     /**
      * Computes the measure of the object.
@@ -16,7 +16,7 @@ abstract public class Measurable<T> {
      */
     abstract public double getMeasure();
 
-    public static <T extends Measurable> double getLargest(ArrayList<T> objects) {
+    public static <T extends Measurable> T getLargest(ArrayList<T> objects) {
 
         T largest = objects.get(0);
         for (int i = 1; i < objects.size(); i++) {
@@ -25,6 +25,23 @@ abstract public class Measurable<T> {
                 largest = obj;
             }
         }
-        return largest.getMeasure();
+        return largest;
     }
+
+    /**
+     *
+     * @param a
+     * @return
+     */
+    @Override
+    public int compareTo(Object a) {
+        if (this.getMeasure() < ((Measurable) a).getMeasure()) {
+            return -1;
+        } else if (this.getMeasure() > ((Measurable) a).getMeasure()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    
 }
