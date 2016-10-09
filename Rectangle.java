@@ -1,4 +1,5 @@
-//Chiild Rectangle class extends from parent GeometricObject class
+//Chiild Rectangle class extends from parent Measurable class
+
 public class Rectangle extends Measurable {
 
     //initalize intances
@@ -35,21 +36,24 @@ public class Rectangle extends Measurable {
         this.height = h;
     }
 
-//    //returning the area of the circle
-//    public double getArea() {
-//        return width * height;
-//    }
-//
-//    //returning the perimeter of the circle
-//    public double getPerimeter() {
-//        return 2 * (width + height);
-//    }
-    public double getMeasure() {
+    //returning the area of the circle
+    public double getArea() {
         return width * height;
+    }
+
+    //returning the perimeter of the circle
+    public double getPerimeter() {
+        return 2 * (width + height);
+    }
+
+    public double getMeasure() {
+        return getArea();
     }
 
     //Return a string representation of this object
     public String toString() {
         return "Rectangle area is " + getMeasure();
     }
+
 }//end Rectangle class
+

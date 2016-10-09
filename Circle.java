@@ -1,4 +1,4 @@
-//Chiild Circle class extends from parent GeometricObject class
+//Chiild Circle class extends from parent Measurable class
 
 public class Circle extends Measurable {
 
@@ -25,27 +25,29 @@ public class Circle extends Measurable {
         this.radius = radi;
     }
 
-//    //returning the area of the circle
-//    public double getArea() {
-//        return Math.PI;
-//    }
-//
-//    //returning the perimeter of the circle
-//    public double getPerimeter() {
-//        return 2 * 3.1415926 * radius;
-//    }
-//
-//    //returning the diameter of the circle
-//    public double getDiameter() {
-//        return radius * 2;
-//    }
+    //returning the area of the circle
+    public double getArea() {
+        return Math.PI * (radius * radius);
+    }
+
+    //returning the perimeter of the circle
+    public double getPerimeter() {
+        return 2 * 3.1415926 * radius;
+    }
+
+    //returning the diameter of the circle
+    public double getDiameter() {
+        return radius * 2;
+    }
 
     public double getMeasure() {
-        return Math.PI * (radius * radius);
+        return getArea();
     }
 
     //Return a string representation of this object
     public String toString() {
         return "Circle: area is " + getMeasure();
     }
+
 }//end Circle class
+

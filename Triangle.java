@@ -1,4 +1,4 @@
-//Chiild Triangle class extends from parent GeometricObject class
+//Chiild Triangle class extends from parent Measurable class
 
 public class Triangle extends Measurable {
 
@@ -54,8 +54,7 @@ public class Triangle extends Measurable {
         return side1 + side2 + side3;
     }
 
-    //return the area
-    public double getMeasure() {
+    public double getArea() {
         //return, solving the area of the Triangle
         double s = (getPerimeter() / 2);
         double a = s - side1;
@@ -64,9 +63,15 @@ public class Triangle extends Measurable {
         return Math.sqrt(s * (a) * (b) * (c));
     }
 
+    //return the area
+    public double getMeasure() {
+        //return, solving the area of the Triangle
+        return getArea();
+    }
 
     //Return a string representation of this object
     public String toString() {
         return "Triangle area is " + getMeasure();
     }
 }//end Triangle class
+
